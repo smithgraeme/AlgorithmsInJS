@@ -8,7 +8,7 @@ function mergeSort(inputArray, statistics){
     //check if base case
     const length = inputArray.length
 
-    if (length==0 || length==1) {
+    if (length==1) {
         log(`Base case, returning: ${inputArray}`)
         return inputArray;
     }
