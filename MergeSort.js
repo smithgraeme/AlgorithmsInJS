@@ -8,7 +8,7 @@ function mergeSort(inputArray, statistics){
     //check if base case
     const length = inputArray.length
 
-    if (length==1) {
+    if (length == 1) {
         log(`Base case, returning: ${inputArray}`)
         return inputArray;
     }
@@ -18,8 +18,8 @@ function mergeSort(inputArray, statistics){
     //split in two smaller problems
     const midPoint = Math.floor(length / 2)
 
-    var part1 = inputArray.slice(0,midPoint)
-    var part2 = inputArray.slice((midPoint),length)
+    var part1 = inputArray.slice(0, midPoint)
+    var part2 = inputArray.slice(midPoint, length)
 
     log(`Split part 1: [${part1.toString()}]`);
     log(`Split part 2: [${part2.toString()}]`);
@@ -34,6 +34,7 @@ function mergeSort(inputArray, statistics){
 
     var pointer1 = 0;
     var pointer2 = 0;
+    
     for (let index = 0; index < length; index++) {
         log(`Calculating output value for index ${index}...`);
         statistics.operationCount++;
@@ -64,7 +65,7 @@ var statistics = {
     operationCount: 0,
     arrayLength: arrayToSort.length
 }
-const sortedArray = mergeSort(arrayToSort,statistics);
+const sortedArray = mergeSort(arrayToSort, statistics);
 
 log(`\nDone. Result: ${sortedArray}`);
 
