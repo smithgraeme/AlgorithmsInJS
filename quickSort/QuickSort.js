@@ -11,6 +11,9 @@ quickSort = (array, left, right) => {
         quickSort(array, left, pivot - 1)
         quickSort(array, pivot + 1, right)
     }
+
+    //otherwise there are less than 2 elements in the subproblem
+    //and they are a base case that is already sorted
 }
 
 partition = (array, left, right) => {
