@@ -17,15 +17,19 @@ qsInternal = (array, left, right) => {
 partition = (array, left, right) => {
     var rightPartition = left
 
-    for (let j = left; j < right; j++){
-        if (array[j] <= array[right]) {
-            swap(array, j, rightPartition);
+    for (let ptr = left; ptr < right; ptr++){
+        if (array[ptr] <= array[right]) {
+
+            //if the unprocessed element is small, move it to the right edge of the left partition
             rightPartition++;
+            swap(array, ptr, rightPartition - 1);
         }
+
+        //otherwise, just move pointer so the element falls into the right partition
     }
 
     //move the pivot to the middle
-    //pivot is at the left element of the right partition
+    //by placing it at the left element of the right partition
     swap(array, right, rightPartition)
 
     return rightPartition
