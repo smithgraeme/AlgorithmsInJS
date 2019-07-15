@@ -1,3 +1,5 @@
+//Reference: https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/linear-time-partitioning
+
 const assert = require('assert')
 log = input => console.log(input);
 
