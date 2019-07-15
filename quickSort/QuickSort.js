@@ -22,7 +22,7 @@ partition = (array, left, right) => {
     for (let nextToCompare = left; nextToCompare < right; nextToCompare++){
         if (array[nextToCompare] <= array[right]) {
 
-            //if the unprocessed element is small, move it to the right edge of the left partition
+            //if the unprocessed element is smaller, move it to the right edge of the left partition
             rightPartition++
             swap(array, nextToCompare, rightPartition - 1)
         }
