@@ -1,12 +1,9 @@
 module.exports = array => mergeSort(array, 0, array.length - 1)
 
 mergeSort = (array, left, right) => {
-    //if (right == left) return //recursion base case
-
     if (right > left){
         //divide into two subproblems
         const midPoint = Math.floor((right + left) / 2)
-        // console.log(`midPoint: ${midPoint}, left: ${left}, right: ${right}`)
 
         mergeSort(array, left, midPoint)
         mergeSort(array, midPoint + 1, right)
@@ -14,10 +11,11 @@ mergeSort = (array, left, right) => {
         //merge subproblems (sorted halves of array)
         merge(array, midPoint, left, right)
     }
+
+    //else, 0 or 1 elements => this is abase case that is already sorted
 }
 
 merge = (array, midPoint, left, right) => {
-    // console.log(`Merging. midPoint: ${midPoint}, left: ${left}, right: ${right}`)
 
     //stash each half of array
     //left bound is inclusive, right bound is exclusive
