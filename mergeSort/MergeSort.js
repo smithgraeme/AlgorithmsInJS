@@ -17,7 +17,7 @@ mergeSort = (array, left, right) => {
 
 merge = (array, midPoint, left, right) => {
 
-    //stash each half of array
+    //make copies of each half of array
     //left bound is inclusive, right bound is exclusive
     const tempLeft = array.slice(left, midPoint + 1)
     const tempRight = array.slice(midPoint + 1, right + 1)
