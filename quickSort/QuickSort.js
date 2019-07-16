@@ -17,6 +17,8 @@ quickSort = (array, left, right) => {
 }
 
 partition = (array, left, right) => {
+    //in this implementation the pivot is always the far right most element
+
     var rightPartition = left
 
     for (let nextToCompare = left; nextToCompare < right; nextToCompare++){
