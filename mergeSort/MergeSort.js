@@ -22,26 +22,22 @@ merge = (array, midPoint, left, right) => {
     const tempLeft = array.slice(left, midPoint + 1)
     const tempRight = array.slice(midPoint + 1, right + 1)
 
-    //merge halves back into main array in order
+    //merge halves back into main array in order by stepping through each half and choosing the small element
     var l = 0
     var r = 0
     var mainArrayPointer = left
 
     while (l < tempLeft.length && r < tempRight.length){
         if (tempLeft[l] < tempRight[r]){
-            // console.log("Merging in left")
             array[mainArrayPointer] = tempLeft[l]
             l++
         } else {
-            // console.log("Merging in right")
             array[mainArrayPointer] = tempRight[r]
             r++
         }
 
         mainArrayPointer++
     }
-
-    // console.log(array.toString())
 
     while (l < tempLeft.length){
         array[mainArrayPointer] = tempLeft[l]
